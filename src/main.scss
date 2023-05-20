@@ -1,0 +1,110 @@
+// --- main.scss ---
+// Main SCSS file
+
+
+// --- VARIABLES ---
+
+// Sizing
+$h_nav: 72px;
+
+// Colors
+$c_bg: #08090a;
+$c_bg-alt: #222823;
+$c_fg: #f4f7f5;
+
+$c_accent: #9d4edd;
+
+// Fonts
+@font-face {
+    font-family: "Iosevka";
+    src: url("./fonts/iosevka.ttf");
+}
+
+@font-face {
+    font-family: "Iosevka";
+    src: url("./fonts/iosevka-bold.ttf");
+    font-weight: bold;
+}
+
+$f_subheading: 24pt;
+$f_text-heading: 16pt;
+$f_body: 13pt;
+
+// Transition
+$trans: 0.1s;
+
+
+// --- MAIN ---
+
+// Everything
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: $c_fg;
+    font-family: "Iosevka";
+    font-size: $f_body;
+    line-height: 1.4;
+
+    // Links
+    a {
+        transition: $trans;
+
+        &.active,
+        &:hover {
+            color: $c_accent;
+        }
+    }
+}
+
+// Body
+body {
+    background-color: $c_bg;
+
+    // Root element
+    #root {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas: "nav main extra";    
+    }
+}
+
+// Text formatting
+p {
+    padding-bottom: 8px;
+
+    // Subheading
+    &.subheading {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        font-size: $f_subheading;
+        font-weight: bold;
+    }
+}
+
+// Navbar
+nav {
+    grid-area: nav;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    
+    // Links
+    a {
+        padding: 16px;
+        padding-bottom: 0;
+    }
+}
+
+// Main
+#main {
+    grid-area: main;
+
+    // Text-heading
+    pre.textHeading {
+        text-align: center;
+        font-size: $f_text-heading; 
+        line-height: 1.2;
+        margin: 16px 0;
+    }
+}
