@@ -1,0 +1,84 @@
+$h_nav: 96px;
+
+$c_bg: #252422;
+$c_bg-alt: #403d39;
+$c_fg: #fffcf2;
+$c_fg-alt: #ccc5b9;
+$c_accent: #eb5e28;
+
+@font-face {
+    font-family: "Iosevka";
+    src: url("../fonts/iosevka-regular.ttf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Iosevka";
+    box-sizing: border-box;
+    color: $c_fg;
+    font-size: 12pt;
+}
+
+body {
+    display: grid;
+    grid-template-rows: $h_nav auto;
+    grid-template-areas: "nav"
+    "content";
+    width: 100vw;
+    height: 100vh;
+    background-color: $c_bg;
+}
+
+nav {
+    grid-area: nav;
+    width: 100%;
+    padding: 0 128px;
+    display: flex;
+    justify-content: space-between;
+
+    line-height: $h_nav;
+
+    ul {
+
+        li {
+            display: inline-block;
+            padding-right: 32px;
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            a:hover {
+                color: $c_accent;
+            }
+            
+            a {
+                text-align: right;
+            }
+        }
+    }
+}
+
+#main {
+
+    div {
+        padding: 0 128px;
+
+        h2 {
+            padding: 8px 0;
+            font-size: 24pt;
+        }
+
+        &#heading {
+            height: 15vh;
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column-reverse;
+
+            p {
+                font-size: 64pt;
+            }
+        }
+    }
+}
